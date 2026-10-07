@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-do</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✅</text></svg>">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <section id="auth-view" hidden>
+      <h1>To-do</h1>
+      <form id="auth-form" autocomplete="on">
+        <label>Username
+          <input name="username" autocomplete="username" required minlength="3" maxlength="32">
+        </label>
+        <label>Password
+          <input name="password" type="password" autocomplete="current-password" required minlength="8">
+        </label>
+        <div class="row">
+          <button type="submit" data-action="login">Log in</button>
+          <button type="submit" data-action="register" class="secondary">Create account</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="tasks-view" hidden>
+      <header>
+        <h1>My tasks</h1>
+        <div class="row">
+          <span id="whoami"></span>
+          <button id="logout" class="secondary">Log out</button>
+        </div>
+      </header>
+      <form id="task-form" class="row">
+        <input name="title" placeholder="What needs doing?" maxlength="200" aria-label="New task">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="task-list"></ul>
+      <p id="empty" hidden>No tasks yet.</p>
+    </section>
+
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
